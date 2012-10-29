@@ -81,7 +81,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `forums_categories` WRITE;
 /*!40000 ALTER TABLE `forums_categories` DISABLE KEYS */;
-INSERT INTO `forums_categories` VALUES (1,'Site',2),(5,'Community',5),(10,'Help',10),(15,'Trash',15),(16,'Testing',1);
+INSERT INTO `forums_categories` VALUES (1,'Site',2),(5,'Community',5),(10,'Help',10),(15,'Archive',15),(16,'Testing',1);
 /*!40000 ALTER TABLE `forums_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 

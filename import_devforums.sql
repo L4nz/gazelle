@@ -15,34 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `forums`
---
-
-DROP TABLE IF EXISTS `forums`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `forums` (
-  `ID` int(6) unsigned NOT NULL AUTO_INCREMENT,
-  `CategoryID` tinyint(2) NOT NULL DEFAULT '0',
-  `Sort` int(6) unsigned NOT NULL,
-  `Name` varchar(40) NOT NULL DEFAULT '',
-  `Description` varchar(255) DEFAULT '',
-  `MinClassRead` int(4) NOT NULL DEFAULT '0',
-  `MinClassWrite` int(4) NOT NULL DEFAULT '0',
-  `MinClassCreate` int(4) NOT NULL DEFAULT '0',
-  `NumTopics` int(10) NOT NULL DEFAULT '0',
-  `NumPosts` int(10) NOT NULL DEFAULT '0',
-  `LastPostID` int(10) NOT NULL DEFAULT '0',
-  `LastPostAuthorID` int(10) NOT NULL DEFAULT '0',
-  `LastPostTopicID` int(10) NOT NULL DEFAULT '0',
-  `LastPostTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `AutoLock` enum('0','1') DEFAULT '1',
-  PRIMARY KEY (`ID`),
-  KEY `Sort` (`Sort`),
-  KEY `MinClassRead` (`MinClassRead`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `forums`
@@ -54,22 +26,6 @@ INSERT INTO `forums` VALUES (18,16,1,'Mooo Suggestions','Site is now bug testing
 /*!40000 ALTER TABLE `forums` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `forums_polls`
---
-
-DROP TABLE IF EXISTS `forums_polls`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `forums_polls` (
-  `TopicID` int(10) unsigned NOT NULL,
-  `Question` varchar(255) NOT NULL,
-  `Answers` text NOT NULL,
-  `Featured` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Closed` enum('0','1') NOT NULL DEFAULT '0',
-  PRIMARY KEY (`TopicID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `forums_polls`
@@ -81,20 +37,6 @@ INSERT INTO `forums_polls` VALUES (5721,'test poll','a:4:{i:1;s:19:\"Dave is an 
 /*!40000 ALTER TABLE `forums_polls` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `forums_polls_votes`
---
-
-DROP TABLE IF EXISTS `forums_polls_votes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `forums_polls_votes` (
-  `TopicID` int(10) unsigned NOT NULL,
-  `UserID` int(10) unsigned NOT NULL,
-  `Vote` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`TopicID`,`UserID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `forums_polls_votes`
@@ -106,26 +48,6 @@ INSERT INTO `forums_polls_votes` VALUES (5721,1243,2),(5721,6203,0),(5721,37969,
 /*!40000 ALTER TABLE `forums_polls_votes` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `forums_posts`
---
-
-DROP TABLE IF EXISTS `forums_posts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `forums_posts` (
-  `ID` int(10) NOT NULL AUTO_INCREMENT,
-  `TopicID` int(10) NOT NULL,
-  `AuthorID` int(10) NOT NULL,
-  `AddedTime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Body` mediumtext,
-  `EditedUserID` int(10) DEFAULT NULL,
-  `EditedTime` datetime DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `TopicID` (`TopicID`),
-  KEY `AuthorID` (`AuthorID`)
-) ENGINE=InnoDB AUTO_INCREMENT=48139 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `forums_posts`

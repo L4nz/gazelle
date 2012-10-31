@@ -75,15 +75,6 @@ INSERT INTO `do_not_upload` VALUES (1,'NO Underage (below 18) content.','',84499
 /*!40000 ALTER TABLE `do_not_upload` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping data for table `forums_categories`
---
-
-LOCK TABLES `forums_categories` WRITE;
-/*!40000 ALTER TABLE `forums_categories` DISABLE KEYS */;
-INSERT INTO `forums_categories` VALUES (1,'Site',2),(5,'Community',5),(10,'Help',10),(15,'Archive',15),(16,'Testing',1);
-/*!40000 ALTER TABLE `forums_categories` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping data for table `imagehost_whitelist`
@@ -115,35 +106,18 @@ INSERT INTO `permissions` VALUES (1,600,'Admin',4096,150,250,'a:129:{s:11:\"MaxC
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping data for table `review_reasons`
---
-
-LOCK TABLES `review_reasons` WRITE;
-/*!40000 ALTER TABLE `review_reasons` DISABLE KEYS */;
-INSERT INTO `review_reasons` VALUES (1,2,'Screenshots','Not enough screenshots.'),(2,4,'Description','Lack of text description.'),(3,8,'Screenshots & Description','Not enough screenshots, lack of text description.');
-/*!40000 ALTER TABLE `review_reasons` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping data for table `schedule`
 --
 
+DELETE FROM `schedule`;
 LOCK TABLES `schedule` WRITE;
 /*!40000 ALTER TABLE `schedule` DISABLE KEYS */;
 INSERT INTO `schedule` VALUES (15,29,8);
 /*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping data for table `site_options`
---
-
-LOCK TABLES `site_options` WRITE;
-/*!40000 ALTER TABLE `site_options` DISABLE KEYS */;
-INSERT INTO `site_options` VALUES (24,0,720,524288);
-/*!40000 ALTER TABLE `site_options` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping data for table `stylesheets`
